@@ -1,0 +1,5 @@
+Hello,hola
+computer,computadora
+good,bueno
+list,lista
+market,mercado

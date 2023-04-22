@@ -1,29 +1,34 @@
-import java.io.File;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Scanner;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class Reader {
-
-    /**
-     * Return lines of txt.
-     * @return
-     */
-    public static ArrayList<String> leer() {
-        ArrayList<String> lineas = new ArrayList<>();
+    public static ArrayList<String> readFile(String fileName) {
+        ArrayList<String> fileLines = new ArrayList<String>();
+        BufferedReader reader = null;
 
         try {
-            File archivo = new File("procesos.txt");
-            Scanner scan = new Scanner(archivo);
-
-            while (scan.hasNextLine()) {
-                String linea = scan.nextLine();
-                lineas.add(linea);
+            reader = new BufferedReader(new FileReader(fileName));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
             }
-            scan.close();
-
-        } catch (Exception e) {
-            System.out.println("Error en: " + e.getMessage());
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (reader != null) {
+                    reader.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
-        return lineas;
+        return fileLines;
     }
 }
