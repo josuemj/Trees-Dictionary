@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class SplayTree implements Tree{
@@ -204,6 +205,13 @@ public class SplayTree implements Tree{
         parent.parent = x;
         if (grandparent == root) {
             root = x;
+        }
+    }
+
+    @Override
+    public void setNodes(ArrayList<String> translation) {
+        for(int i = 0;i<translation.size();i++){
+            System.out.println(translation.get(i));
         }
     }
 }

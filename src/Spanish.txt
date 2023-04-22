@@ -3,3 +3,4 @@ computer,computadora
 good,bueno
 list,lista
 market,mercado
+computer,computadora

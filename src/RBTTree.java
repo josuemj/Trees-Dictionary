@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class RBTTree implements Tree {
     private static final boolean RED = true;
     private static final boolean BLACK = false;
@@ -104,6 +106,15 @@ public class RBTTree implements Tree {
             return false;
         }
         return x.color == RED;
+    }
+
+    @Override
+    public void setNodes(ArrayList<String> translation) {
+
+        for(int i = 0;i<translation.size();i++){
+            System.out.println(translation.get(i));
+
+        }
     }
 }
 

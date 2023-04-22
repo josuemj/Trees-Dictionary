@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class BST implements Tree{
     private Node root;
 
@@ -50,5 +52,14 @@ public class BST implements Tree{
             }
         }
         return null;
+    }
+
+    @Override
+    public void setNodes(ArrayList<String> translation) {
+
+        for(int i = 0;i<translation.size();i++){
+            System.out.println(translation.get(i));
+
+        }
     }
 }
